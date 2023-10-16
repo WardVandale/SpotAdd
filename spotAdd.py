@@ -76,10 +76,10 @@ if 0 <= selected_index < len(your_playlists):
                     sp.playlist_add_items(selected_playlist_id, [current_track_uri])
                     print(f"Added '{current_playback['item']['name']}' to the playlist.")
             else:
-                print(f"'{current_playback['item']['name']}' has more than 5 seconds remaining.")
+                pass
         else:
             pass
 
-        time.sleep(2)
+        time.sleep(4)
 else:
     pass
