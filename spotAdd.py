@@ -65,7 +65,7 @@ if 0 <= selected_index < len(your_playlists):
             current_track_uri = current_playback['item']['uri']
             current_track_duration_ms = current_playback['item']['duration_ms']
             current_track_progress_ms = current_playback['progress_ms']
-            
+
             remaining_playtime_seconds = (current_track_duration_ms - current_track_progress_ms) / 1000
 
             if remaining_playtime_seconds <= 5:
@@ -78,8 +78,8 @@ if 0 <= selected_index < len(your_playlists):
             else:
                 print(f"'{current_playback['item']['name']}' has more than 5 seconds remaining.")
         else:
-            print("No song is currently playing.")
+            pass
 
         time.sleep(2)
 else:
-    print("Invalid playlist selection.")
+    pass
