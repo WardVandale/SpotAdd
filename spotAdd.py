@@ -1,4 +1,5 @@
 import os
+import sys
 import json
 import spotipy
 import time
@@ -57,7 +58,7 @@ selected_index = int(input("Enter the number of the playlist to add songs to: ")
 # Get the selected playlist ID
 if 0 <= selected_index < len(your_playlists):
     selected_playlist_id = your_playlists[selected_index]['id']
-
+    stopProgram = 0
     while True:
         # Check the currently playing song
         current_playback = sp.current_playback()
@@ -67,7 +68,7 @@ if 0 <= selected_index < len(your_playlists):
             current_track_progress_ms = current_playback['progress_ms']
 
             remaining_playtime_seconds = (current_track_duration_ms - current_track_progress_ms) / 1000
-
+            stopProgram = 0
             if remaining_playtime_seconds <= 5:
                 playlist_tracks = sp.playlist_tracks(selected_playlist_id)
                 track_uris_in_playlist = [track['track']['uri'] for track in playlist_tracks['items']]
@@ -78,8 +79,10 @@ if 0 <= selected_index < len(your_playlists):
             else:
                 pass
         else:
-            pass
+            stopProgram = stopProgram + 1
+            if stopProgram == 600:
+                sys.exit()
 
-        time.sleep(4)
+        time.sleep(1)
 else:
     pass
