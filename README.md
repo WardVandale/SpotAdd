@@ -6,6 +6,8 @@ Automatically add the song you are listening to in a playlist of choice, or tran
 * Python
 * Spotify Premium acocunt
 * Spotipy library installed in python
+* Spotify Developer Add with client id and client secret
+* spotify username Settings > Edit profile > username
 
 ```
 pip install -r requirements.txt
