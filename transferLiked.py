@@ -47,7 +47,7 @@ scopes = [
     'user-library-read',  # added scope for reading liked songs
 ]
 
-sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=client_id, client_secret=client_secret, redirect_uri='http://localhost:8888/callback', scope=scopes))
+sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=client_id, client_secret=client_secret, redirect_uri='http://127.0.0.1:8888/callback', scope=scopes))
 
 # Function to create a new playlist with the given name
 def create_playlist(name):
