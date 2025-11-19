@@ -45,7 +45,7 @@ scopes = [
     'playlist-modify-private',
 ]
 
-sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=client_id, client_secret=client_secret, redirect_uri='http://localhost:8888/callback', scope=scopes))
+sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=client_id, client_secret=client_secret, redirect_uri='http://127.0.0.1:8888/callback', scope=scopes))
 
 user_playlists = sp.current_user_playlists()
 your_playlists = [playlist for playlist in user_playlists['items'] if playlist['owner']['id'] == sp.me()['id']]
